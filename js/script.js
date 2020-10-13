@@ -13,14 +13,14 @@
 // calcolo quindi i prezzi dei biglietti
 
 
-let prezzoBiglietto = 0.21;
+let prezzoBigliettoPerKm = 0.21;
 
-let scontoOver65PerKm = (prezzoBiglietto * 40.0) / 100;
-scontoOver65PerKm = (prezzoBiglietto - scontoOver65PerKm).toFixed(2);
+let scontoOver65PerKm = (prezzoBigliettoPerKm * 40.0) / 100;
+scontoOver65PerKm = (prezzoBigliettoPerKm - scontoOver65PerKm).toFixed(2);
 console.log(scontoOver65PerKm);
 
-let scontoUnder18PerKm = (prezzoBiglietto * 20) / 100;
-scontoUnder18PerKm = (prezzoBiglietto - scontoUnder18PerKm).toFixed(2);
+let scontoUnder18PerKm = (prezzoBigliettoPerKm * 20) / 100;
+scontoUnder18PerKm = (prezzoBigliettoPerKm - scontoUnder18PerKm).toFixed(2);
 console.log(scontoUnder18PerKm);
 
 let etaUtente = parseInt(prompt('quanti anni hai?'))
@@ -46,5 +46,5 @@ if( etaUtente > 65) {
 } else if ( etaUtente < 18) {
     document.getElementById('password').innerHTML='il tuo prezzo è di' + '&nbsp' + scontoUnder18PerKm * kmDaPercorrere + '' + '€ scontato del 20%';
 } else {
-    document.getElementById('password').innerHTML='il tuo prezzo è di' + '&nbsp' + prezzoBiglietto * kmDaPercorrere + '&nbsp' + '€';
+    document.getElementById('password').innerHTML='il tuo prezzo è di' + '&nbsp' + prezzoBigliettoPerKm * kmDaPercorrere + '&nbsp' + '€';
 }
