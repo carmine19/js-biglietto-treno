@@ -14,23 +14,24 @@
 
 
 let prezzoBiglietto = 0.21;
+console.log(prezzoBiglietto)
 
 let scontoOver65 = (prezzoBiglietto * 40) / 100;
 scontoOver65 = prezzoBiglietto - scontoOver65;
 console.log(scontoOver65);
 
 let scontoUnder18 = (prezzoBiglietto * 20) / 100;
+console.log(scontoUnder18)
 scontoUnder18 = prezzoBiglietto - scontoUnder18;
 console.log(scontoUnder18);
 
 let etaUtente = parseInt(prompt('quanti anni hai?'))
 console.log(etaUtente)
 
-
-if(isNaN(etaUtente) == false){
+if(isNaN(etaUtente) == false && (etaUtente > 5 && etaUtente < 120) ){
     console.log('numero corretto')
 }else {
-    alert(`devi inserire un numero`)
+    alert(`devi inserire un numero corretto`)
 }
 
 let destinazione = parseInt(prompt('Quanti km devi percorrere?'))
