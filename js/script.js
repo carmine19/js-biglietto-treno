@@ -14,16 +14,15 @@
 
 
 let prezzoBiglietto = 0.21;
-console.log(prezzoBiglietto)
 
-let scontoOver65 = (prezzoBiglietto * 40) / 100;
-scontoOver65 = prezzoBiglietto - scontoOver65;
-console.log(scontoOver65);
+let scontoOver65PerKm = (prezzoBiglietto * 40.0) / 100;
+scontoOver65PerKm = (prezzoBiglietto - scontoOver65PerKm).toFixed(2);
+console.log(scontoOver65PerKm);
 
-let scontoUnder18 = (prezzoBiglietto * 20) / 100;
-console.log(scontoUnder18)
-scontoUnder18 = prezzoBiglietto - scontoUnder18;
-console.log(scontoUnder18);
+let scontoUnder18PerKm = (prezzoBiglietto * 20) / 100;
+console.log(scontoUnder18PerKm)
+scontoUnder18PerKm = (prezzoBiglietto - scontoUnder18PerKm).toFixed(2);
+console.log(scontoUnder18PerKm);
 
 let etaUtente = parseInt(prompt('quanti anni hai?'))
 console.log(etaUtente)
@@ -44,9 +43,9 @@ if(isNaN(destinazione) == false){
 }
 
 if( etaUtente > 65) {
-    document.getElementById('password').innerHTML='il tuo prezzo è di'+ '&nbsp' + scontoOver65 * destinazione + '' + '€ scontato del 40%';
+    document.getElementById('password').innerHTML='il tuo prezzo è di'+ '&nbsp' + scontoOver65PerKm * destinazione + '' + '€ scontato del 40%';
 } else if ( etaUtente < 18) {
-    document.getElementById('password').innerHTML='il tuo prezzo è di' + '&nbsp' + scontoUnder18 * destinazione + '' + '€ scontato del 20%';
+    document.getElementById('password').innerHTML='il tuo prezzo è di' + '&nbsp' + scontoUnder18PerKm * destinazione + '' + '€ scontato del 20%';
 } else {
     document.getElementById('password').innerHTML='il tuo prezzo è di' + '&nbsp' + prezzoBiglietto * destinazione + '&nbsp' + '€';
 }
